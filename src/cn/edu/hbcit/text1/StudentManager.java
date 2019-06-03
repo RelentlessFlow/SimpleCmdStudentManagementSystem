@@ -42,10 +42,13 @@ public class StudentManager {
         }
     }
     void findNameScore(){
-
+        Scanner sc = new Scanner(System.in);
+        String tempName = sc.nextLine();
         ArrayList<Student> newStu = new ArrayList<Student>();
         for (Student s : newStu){
-
+            if (tempName == s.getName()){
+                System.out.println(s.getName()+"的分数是:Java"+s.getJava()+"SQL是"+s.getJava()+"C语言是"+s.getC());
+            }
         }
     }
 }
