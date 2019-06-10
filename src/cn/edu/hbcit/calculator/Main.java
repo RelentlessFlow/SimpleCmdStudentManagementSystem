@@ -16,6 +16,7 @@ public class Main {
         System.out.println("_____________________________________________");
         System.out.println("________________按0键退出系统________________________");
         System.out.println("_____________________________________________");
+        System.out.println("_____________________________________________");
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入菜单项：");
         String inputValue = sc.nextLine();
