@@ -1,4 +1,4 @@
-package cn.edu.hbcit.text2;
+package cn.edu.hbcit.st2;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -28,14 +28,9 @@ public class ConnDataBase {
             //加载createStatement
             Statement smt = conn.createStatement();
             createTable(smt);
-
-//            selSumAvg(smt);
-
             welcome(smt,conn);
             smt.close();
             conn.close();
-
-
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
         } catch (SQLException e2) {
@@ -58,7 +53,7 @@ public class ConnDataBase {
                     selAll(smt);
                     break;
                 case "2":
-                    System.out.println("功能未实现");
+                    selSumAvg(smt);
                     break;
                 case "3":
                     selName(conn);
@@ -122,14 +117,17 @@ public class ConnDataBase {
         }
     }
     private static void selSumAvg(Statement smt){
-        String selSum = "SELECT sum(javascore+sqlscore+cscore) AS '总分' FROM student;";
-        String selAvg = "SELECT avg(javascore+sqlscore+cscore) AS '平均分' FROM student;";
+        String selSum = "SELECT sum(javascore+sqlscore+cscore) FROM student;";
+        String selAvg = "SELECT avg(javascore+sqlscore+cscore) FROM student;";
         try {
             ResultSet sumRes = smt.executeQuery(selSum);
             ResultSet avgRes = smt.executeQuery(selAvg);
             while (sumRes.next()){
                 String sum = sumRes.getString(1);
                 System.out.println(sum);
+
+
+
             }
             while (avgRes.next()){
                 String avg = sumRes.getString(1);

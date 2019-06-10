@@ -1,4 +1,4 @@
-package cn.edu.hbcit.text1;
+package cn.edu.hbcit.st1;
 
 public class Student {
     private String num;
